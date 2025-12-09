@@ -1,0 +1,18 @@
+<div *ngIf="project" class="project-item">
+  <h2>Project Details</h2>
+  <div class="project-content">
+    <div class="project-details">
+      <div *ngIf="project" class="project-images">
+        <img  [ngSrc]="project.image" [alt]="project.name" width="500" height="300" priority/>
+      </div>
+      <p><strong>ID: </strong> {{project.id}}</p>
+      <p><strong>Project Name: </strong> {{project.name}}</p>
+      <p><strong>Description: </strong> {{project.description}}</p>
+    </div>
+    <div class="buttons">
+      <button (click)="goBackward()" [disabled]="currentIndex === 0">Previous</button>
+      <button (click)="goForward()" [disabled]="currentIndex === projectList.length - 1">Next</button>
+      <button (click)="goBack()">Back to Project List</button>
+    </div>
+  </div>
+</div>

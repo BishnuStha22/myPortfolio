@@ -1,0 +1,26 @@
+<div class="projects-container">
+  <div class="projects-header">
+    <h1>My Projects</h1>
+    <p>Explore my latest work and personal projects</p>
+  </div>
+
+  <div class="projects-grid">
+    <div
+      *ngFor="let project of projects"
+      class="project-card">
+
+      <div class="project-image">
+        <img [src]="project.image" [alt]="project.name">
+      </div>
+
+      <div class="project-content">
+        <h3>{{ project.name }}</h3>
+        <p class="project-description">{{ project.description }}</p>
+
+        <div class="project-footer">
+          <span class="view-details" (click)="navigateToProject(project.id)">View Details</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,238 @@
+$purple: #5e1bd3;
+$white: #fff;
+$transition: all 0.3s ease;
+$shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+$text-dark: #333;
+$text-light: #555;
+$button-primary: linear-gradient(135deg, #29474c 0%, #5e1bd3 100%);
+$button-secondary: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+
+.project-item {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: $white;
+  border-radius: 0.8rem;
+  box-shadow: $shadow;
+
+  h2 {
+    text-align: center;
+    color: $purple;
+    background-clip: text;
+    margin-bottom: 2rem;
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .project-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+
+    .project-details {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+
+      .project-images {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+
+        img {
+          max-width: 100%;
+          height: auto;
+          border-radius: 0.8rem;
+          box-shadow: $shadow;
+          transition: $transition;
+        }
+      }
+
+      p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: $text-light;
+        margin: 0.5rem 0;
+        padding: 0.5rem;
+        border-radius: 0.4rem;
+        transition: $transition;
+
+        &:hover {
+          background: rgba(94, 27, 211, 0.05);
+          transform: translateX(5px);
+        }
+
+        strong {
+          font-weight: 600;
+          color: $purple;
+        }
+      }
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      padding-top: 1rem;
+
+      button {
+        padding: 0.75rem 2rem;
+        font-size: 1.1rem;
+        font-weight: 600;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: $transition;
+        background: $button-primary;
+        color: $white;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+        &:hover:not(:disabled) {
+          transform: translateY(-3px);
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        &:active:not(:disabled) {
+          transform: translateY(-1px);
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        &:disabled {
+          background: linear-gradient(135deg, #ccc 0%, #999 100%);
+          color: #666;
+          opacity: 0.6;
+          box-shadow: none;
+
+          &:hover {
+            transform: none;
+          }
+        }
+
+        &:last-child {
+          background: $button-secondary;
+
+          &:hover:not(:disabled) {
+            background: linear-gradient(135deg, #5a6268 0%, #343a40 100%);
+          }
+        }
+      }
+    }
+  }
+}
+
+// Responsive Design
+@media (max-width: 960px) {
+  .project-item {
+    padding: 2rem;
+    margin: 1.5rem auto;
+
+    h2 {
+      font-size: 2rem;
+    }
+
+    .project-content {
+      .project-details {
+        p {
+          font-size: 1rem;
+        }
+      }
+
+      .buttons {
+        button {
+          font-size: 1rem;
+          padding: 0.7rem 1.8rem;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 780px) {
+  .project-item {
+    padding: 1.5rem;
+    margin: 1rem;
+
+    h2 {
+      font-size: 1.8rem;
+    }
+
+    .project-content {
+      gap: 2rem;
+
+      .buttons {
+        gap: 1.2rem;
+
+        button {
+          font-size: 0.95rem;
+          padding: 0.65rem 1.5rem;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 590px) {
+  .project-item {
+    h2 {
+      font-size: 1.6rem;
+    }
+
+    .project-content {
+      .project-details {
+        p {
+          font-size: 0.95rem;
+        }
+      }
+
+      .buttons {
+        gap: 1rem;
+
+        button {
+          font-size: 0.9rem;
+          padding: 0.6rem 1.3rem;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .project-item {
+    padding: 1rem;
+    margin: 0.5rem;
+
+    h2 {
+      font-size: 1.4rem;
+    }
+
+    .project-content {
+      gap: 1.5rem;
+
+      .project-details {
+        gap: 1rem;
+
+        .project-images {
+          margin-bottom: 1rem;
+        }
+
+        p {
+          font-size: 0.9rem;
+          padding: 0.4rem;
+        }
+      }
+
+      .buttons {
+        flex-direction: column;
+        gap: 0.8rem;
+
+        button {
+          width: 100%;
+          font-size: 0.85rem;
+          padding: 0.6rem 1rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,184 @@
+$footer-bg: linear-gradient(135deg, #29474c 0%, #5e1bd3 100%);
+$white: #fff;
+$transition: all 0.3s ease;
+
+footer {
+  background: $footer-bg;
+  color: $white;
+  padding: 1.5rem 3rem;
+  margin-top: 4rem;
+  border-radius: 0.8rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 2rem;
+  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.2);
+
+  .footer-brand {
+    flex: 0 0 auto;
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: $white;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        margin: 0;
+      }
+      li:hover{
+        transform: scale(1.2);
+      }
+
+      a {
+        color: $white;
+        font-size: 0.9rem;
+        font-weight: 500;
+        text-decoration: none;
+        transition: $transition;
+        padding: 0.2rem 0.5rem;
+        border-radius: 5px;
+        white-space: nowrap;
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.1);
+        }
+
+        &[aria-label="LinkedIn"] {
+          color: #0077b5;
+        }
+
+        &[aria-label="Instagram"] {
+          color: #e4405f;
+        }
+        &[aria-label="Facebook"] {
+          color: #1877F2;
+        }
+      }
+    }
+  }
+
+  .footer-info {
+    flex: 0 0 auto;
+    text-align: center;
+
+    p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.9);
+      white-space: nowrap;
+    }
+  }
+
+  .footer-contact {
+    flex: 0 0 auto;
+    text-align: right;
+
+    address {
+      font-style: normal;
+      font-size: 0.7rem;
+      color: #fff;
+      margin: 0;
+
+      a {
+        color: #dfdddd;
+        text-decoration: none;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+
+        &:hover {
+          text-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+        }
+      }
+    }
+  }
+
+  // Responsive Design
+  @media (max-width: 960px) {
+    padding: 2rem;
+  }
+
+  @media (max-width: 780px) {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1.5rem;
+
+    .footer-brand,
+    .footer-info,
+    .footer-contact {
+      width: 100%;
+      text-align: center;
+    }
+
+    .footer-brand .social-links {
+      justify-content: center;
+    }
+
+    .footer-contact address {
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 590px) {
+    padding: 1.5rem 1rem;
+
+    .footer-brand {
+      h2 {
+        font-size: 1.4rem;
+      }
+
+      .social-links {
+        gap: 1rem;
+
+        a {
+          font-size: 0.9rem;
+        }
+      }
+    }
+
+    .footer-info p {
+      font-size: 0.85rem;
+    }
+
+    .footer-contact address {
+      font-size: 0.85rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 1.5rem 1rem;
+
+    .footer-brand {
+      h2 {
+        font-size: 1.2rem;
+      }
+
+      .social-links {
+        gap: 0.8rem;
+        flex-wrap: wrap;
+
+        a {
+          font-size: 0.85rem;
+        }
+      }
+    }
+
+    .footer-info p {
+      font-size: 0.75rem;
+    }
+
+    .footer-contact address {
+      font-size: 0.75rem;
+    }
+  }
+}

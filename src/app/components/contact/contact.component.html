@@ -1,0 +1,56 @@
+<div class="contact-container">
+  <h2>Contact Me</h2>
+
+  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()"  >
+
+    <!-- Name -->
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input id="name" type="text" formControlName="name" placeholder="Your full name"
+      appAutoFocus/>
+    </div>
+
+    <!-- Email -->
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input id="email" type="email" formControlName="email" placeholder="your@email.com" />
+    </div>
+
+    <!-- Address -->
+    <div class="form-group">
+      <label for="address">Address</label>
+      <input id="address" type="text" formControlName="address" placeholder="Street, City, Province" />
+    </div>
+
+    <!-- Country -->
+    <div class="form-group">
+      <label for="country">Country</label>
+      <input id="country" type="text" formControlName="country" placeholder="e.g., Canada" />
+    </div>
+
+    <!-- Message -->
+    <div class="form-group">
+      <label for="message">Message</label>
+      <textarea id="message" rows="5" formControlName="message" placeholder="Write your message here..."></textarea>
+    </div>
+
+    <!-- Buttons -->
+    <div class="button-group">
+      <button type="submit">Send Message</button>
+      <button type="button" (click)="contactForm.reset()">Reset</button>
+    </div>
+
+    <div *ngIf="error" class="error">{{ error }}</div>
+  </form>
+
+  <!-- Social Links Section -->
+  <section class="social-section">
+    <h3>Find Me On</h3>
+
+    <ul class="social-links">
+      <li><a href="https://www.linkedin.com/in/bishnu-shrestha-9a9a0a354/" class="linkedin" target="_blank">LinkedIn</a></li>
+      <li><a href="https://www.instagram.com/kenichi111_?igsh=eTd5eXlmMDlocXJr" class="instagram" target="_blank">Instagram</a></li>
+      <li><a href="https://www.facebook.com/share/1YAz2izHaZ/" class="facebook" target="_blank">Facebook</a></li>
+    </ul>
+  </section>
+</div>
